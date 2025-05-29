@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/toast_background"
+    android:padding="12dp"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/ic_dialog_info"
+        android:layout_marginEnd="8dp"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/message"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:text="Mensagem aqui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
