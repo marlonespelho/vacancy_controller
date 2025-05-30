@@ -5,12 +5,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get_it/get_it.dart';
-import 'package:vacancy_controller/core/design/theme/theme.dart';
-import 'package:vacancy_controller/core/services/navigation.dart';
-import 'package:vacancy_controller/generated/l10n.dart';
-import 'package:vacancy_controller/modules/app_store.dart';
+import 'package:parking_controller/core/design/theme/theme.dart';
+import 'package:parking_controller/core/services/navigation.dart';
+import 'package:parking_controller/generated/l10n.dart';
+import 'package:parking_controller/modules/app_store.dart';
 import 'package:sizer/sizer.dart';
-import 'package:vacancy_controller/modules/vacancy/main.dart';
+import 'package:parking_controller/modules/parking/main.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -21,7 +21,7 @@ class AppWidget extends StatelessWidget {
 
     return Sizer(builder: (context, orientation, deviceType) {
       Modular.setNavigatorKey(GetIt.I.get<NavigationService>().navigatorKey);
-      Modular.setInitialRoute(HomeModule.homeRoute);
+      Modular.setInitialRoute(ParkingModule.homeRoute);
 
       return Observer(builder: (context) {
         return MaterialApp.router(

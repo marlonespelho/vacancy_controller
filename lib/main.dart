@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vacancy_controller/core/config/system.dart';
-import 'package:vacancy_controller/modules/app_core.dart';
+import 'package:parking_controller/core/config/system.dart';
+import 'package:parking_controller/modules/app_core.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

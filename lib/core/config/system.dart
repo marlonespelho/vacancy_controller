@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:get_it/get_it.dart';
-import 'package:vacancy_controller/core/config/environment.dart';
-import 'package:vacancy_controller/core/services/main.dart';
+import 'package:parking_controller/core/config/environment.dart';
+import 'package:parking_controller/core/services/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class System {

@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vacancy_controller/core/design/widgets/error_widget.dart';
-import 'package:vacancy_controller/core/http/dio/dio_interceptors.dart';
-import 'package:vacancy_controller/core/http/http_service.dart';
+import 'package:parking_controller/core/design/widgets/error_widget.dart';
+import 'package:parking_controller/core/http/dio/dio_interceptors.dart';
+import 'package:parking_controller/core/http/http_service.dart';
 
 class DioHttpService implements HttpService {
   late Dio _client;

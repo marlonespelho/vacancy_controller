@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
-import 'package:vacancy_controller/core/design/widgets/snack_bar.dart';
-import 'package:vacancy_controller/core/http/http_service.dart';
+import 'package:parking_controller/core/design/widgets/snack_bar.dart';
+import 'package:parking_controller/core/http/http_service.dart';
 
 handleException(Object e, [Function? onError, stack]) async {
   if (onError != null) {

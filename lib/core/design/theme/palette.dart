@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vacancy_controller/core/design/theme/color_helpers.dart';
+import 'package:parking_controller/core/design/theme/color_helpers.dart';
 
 class Palette {
   static const Color primary = Color(0xFF3B4CCA);
@@ -32,7 +32,7 @@ class Palette {
   static const Color darkBackgroundColor = Color(0xFF2C2925);
 
   static const Color warning = Colors.yellow;
-  static const Color error = Color(0xFFE53E3E);
+  static const Color error = Color(0xFFD95050);
   static const Color success = Color(0xFF68D391);
 
   static Color get backgroundSnackAlert => generateMaterialColor(const Color.fromRGBO(255, 248, 224, 1));

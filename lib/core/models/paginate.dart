@@ -1,4 +1,4 @@
-import 'package:vacancy_controller/core/models/main.dart';
+import 'package:parking_controller/core/models/main.dart';
 
 class Paginate {
   List<ModelInterface>? _data;

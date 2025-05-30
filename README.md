@@ -1,4 +1,4 @@
-# vacancy_controller
+# parking_controller
 
 A Flutter project for parking spot management, using MobX for state management, as well as unit and integration tests.
 

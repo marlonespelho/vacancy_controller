@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:vacancy_controller/core/design/theme/palette.dart';
-import 'package:vacancy_controller/core/services/main.dart';
+import 'package:parking_controller/core/design/theme/palette.dart';
+import 'package:parking_controller/core/services/main.dart';
 
 showSnackBarMessage({required String message, required SnackBarTypeEnum type}) {
   var context = GetIt.I.get<NavigationService>().navigatorKey.currentState?.context;

@@ -1,4 +1,4 @@
-import 'package:vacancy_controller/core/config/config.dart';
+import 'package:parking_controller/core/config/config.dart';
 
 class Environment {
   factory Environment() {

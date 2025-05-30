@@ -1,4 +1,4 @@
-import 'package:vacancy_controller/core/config/constants.dart';
+import 'package:parking_controller/core/config/constants.dart';
 
 abstract class BaseConfig {
   String get environmentName;

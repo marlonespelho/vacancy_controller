@@ -1,6 +1,6 @@
 {
-    "name": "vacancy_controller",
-    "short_name": "vacancy_controller",
+    "name": "parking_controller",
+    "short_name": "parking_controller",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

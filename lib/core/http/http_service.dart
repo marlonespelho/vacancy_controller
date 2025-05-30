@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:vacancy_controller/generated/l10n.dart';
+import 'package:parking_controller/generated/l10n.dart';
 
 abstract class HttpService {
   HttpService(this.baseUrl, this.timeout);

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vacancy_controller/core/design/widgets/loading_dialog.dart';
-import 'package:vacancy_controller/generated/l10n.dart';
-import 'package:vacancy_controller/modules/app_store.dart';
-import 'package:vacancy_controller/modules/vacancy/stores/main.dart';
+import 'package:parking_controller/core/design/widgets/loading_dialog.dart';
+import 'package:parking_controller/core/services/main.dart';
+import 'package:parking_controller/generated/l10n.dart';
+import 'package:parking_controller/modules/app_store.dart';
+import 'package:parking_controller/modules/parking/main.dart';
+import 'package:parking_controller/modules/parking/stores/main.dart';
+import 'package:parking_controller/modules/parking/stores/parking_store.dart';
+import 'package:parking_controller/modules/parking/views/home_page/widgets/parking_list_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,6 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final HomeStore homeStore = Modular.get();
   final AppStore appStore = Modular.get();
+  final ParkingStore parkingStore = Modular.get();
 
   final ScrollController scrollController = ScrollController();
 
@@ -23,13 +28,14 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      homeStore.setupCallbacks(
+      parkingStore.setupCallbacks(
         showProgressDialog: LoadingDialog.showLoading,
         hideProgressDialog: LoadingDialog.hideLoading,
       );
       scrollController.addListener(() {
         if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {}
       });
+      parkingStore.init();
     });
   }
 
@@ -44,6 +50,34 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: buildAppBar(context),
       body: buildContent(),
+      floatingActionButton: buildHistoryFAB(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+    );
+  }
+
+  Widget buildHistoryFAB() {
+    return ElevatedButton(
+      key: const Key("parkingHistoryFAB"),
+      onPressed: () {
+        pushNamed(routeName: ParkingModule.parkingHistoryRoute);
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        spacing: 8,
+        children: [
+          Icon(
+            Icons.history,
+            color: Theme.of(context).colorScheme.onPrimary,
+            size: 24,
+          ),
+          Text(
+            S.current.parkingHistoryFABLabel,
+            style: const TextStyle(fontSize: 16),
+          ),
+        ],
+      ),
     );
   }
 
@@ -71,31 +105,18 @@ class _HomePageState extends State<HomePage> {
 
   Observer buildContent() {
     return Observer(builder: (context) {
-      return homeStore.isLoading ? buildLoading() : buildGrid();
+      return homeStore.isLoading
+          ? buildLoading()
+          : RefreshIndicator(
+              onRefresh: () async {
+                if (homeStore.isLoading) return;
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: ParkingWidgetList(),
+              ),
+            );
     });
-  }
-
-  Widget buildGrid() {
-    return RefreshIndicator(
-      onRefresh: () async {
-        if (homeStore.isLoading) return;
-      },
-      child: Scrollbar(
-        controller: scrollController,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: GridView.count(
-            crossAxisCount: 2,
-            childAspectRatio: 0.8,
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            children: [],
-          ),
-        ),
-      ),
-    );
   }
 
   Widget buildLoading() {

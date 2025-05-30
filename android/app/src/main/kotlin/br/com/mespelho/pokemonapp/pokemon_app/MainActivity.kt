@@ -1,4 +1,4 @@
-package br.com.mespelho.vacancy_controller
+package br.com.mespelho.parking_controller
 
 import android.widget.Toast
 import io.flutter.embedding.android.FlutterActivity

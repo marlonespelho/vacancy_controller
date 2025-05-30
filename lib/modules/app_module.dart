@@ -1,9 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vacancy_controller/core/config/environment.dart';
+import 'package:parking_controller/core/config/environment.dart';
 
-import 'package:vacancy_controller/core/services/api_service.dart';
-import 'package:vacancy_controller/modules/app_store.dart';
-import 'package:vacancy_controller/modules/vacancy/main.dart';
+import 'package:parking_controller/core/services/api_service.dart';
+import 'package:parking_controller/modules/app_store.dart';
+import 'package:parking_controller/modules/parking/main.dart';
 
 class AppModule extends Module {
   @override
@@ -14,7 +14,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute(HomeModule.homeRoute, module: HomeModule()),
+        ModuleRoute(ParkingModule.homeRoute, module: ParkingModule()),
       ];
 }
 

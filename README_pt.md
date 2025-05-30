@@ -1,4 +1,4 @@
-# vacancy_controller
+# parking_controller
 
 Um projeto Flutter para realizar o controle de vagas de estacionamento, utilizando o MobX para gerenciamento de estado e testes unitários e de integração.
 

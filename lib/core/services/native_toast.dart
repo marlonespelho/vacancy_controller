@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:vacancy_controller/core/design/widgets/snack_bar.dart';
-import 'package:vacancy_controller/generated/l10n.dart';
+import 'package:parking_controller/core/design/widgets/snack_bar.dart';
+import 'package:parking_controller/generated/l10n.dart';
 
 class NativeToast {
   static const MethodChannel _channel = MethodChannel('message/toast');

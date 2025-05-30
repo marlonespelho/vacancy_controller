@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vacancy_controller/core/design/theme/palette.dart';
+import 'package:parking_controller/core/design/theme/palette.dart';
 
 class DefaultTheme {
   static void init() {
@@ -20,14 +20,10 @@ class DefaultTheme {
           onPrimary: Palette.onPrimaryColor,
           onSecondary: Palette.onSecondaryColor,
           surface: Palette.backgroundColor,
+          error: Palette.error,
         ),
         scaffoldBackgroundColor: Palette.backgroundColor,
         iconTheme: DefaultTheme.iconTheme(),
-        iconButtonTheme: const IconButtonThemeData(
-          style: ButtonStyle(
-            iconColor: WidgetStatePropertyAll(Palette.onPrimaryColor),
-          ),
-        ),
         dialogBackgroundColor: Palette.primary,
         floatingActionButtonTheme: DefaultTheme.floatingActionButtonTheme(),
         textTheme: DefaultTheme.textTheme(),
@@ -52,13 +48,27 @@ class DefaultTheme {
         cardTheme: const CardTheme(color: Colors.white, elevation: 2),
         dividerColor: Palette.dividerColor,
         canvasColor: Colors.white,
+        dialogTheme: DialogTheme(
+          backgroundColor: Palette.backgroundColor,
+          titleTextStyle: TextStyle(
+            fontFamily: GoogleFonts.urbanist().fontFamily,
+            color: Palette.primaryTextColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+          contentTextStyle: TextStyle(
+            fontFamily: GoogleFonts.urbanist().fontFamily,
+            color: Palette.primaryTextColor,
+            fontSize: 16,
+          ),
+        ),
       );
 
   static appBarDecoration() {
     return AppBarTheme(
       color: Palette.primary,
       iconTheme: IconThemeData(
-        color: Palette.secondary,
+        color: Palette.onPrimaryColor,
       ),
       titleTextStyle: TextStyle(
         fontFamily: GoogleFonts.urbanist().fontFamily,
@@ -171,7 +181,7 @@ class DefaultTheme {
     return ElevatedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: Palette.primary,
-        foregroundColor: Palette.primary,
+        foregroundColor: Palette.onPrimaryColor,
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -190,7 +200,7 @@ class DefaultTheme {
     return TextButtonThemeData(
       style: OutlinedButton.styleFrom(
         enableFeedback: true,
-        foregroundColor: Palette.secondary,
+        foregroundColor: Palette.primary,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -245,13 +255,14 @@ class DarkTheme {
   static ThemeData getTheme(BuildContext context) => ThemeData(
         useMaterial3: true,
         primarySwatch: Palette.materialPrimaryDark,
-        primaryColor: Palette.darkPrimary,
+        primaryColor: Palette.darkSecondary,
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: Palette.darkSecondary,
           primary: Palette.darkPrimary,
           onPrimary: Palette.darkOnPrimaryColor,
           onSecondary: Palette.darkOnSecondaryColor,
           surface: Palette.darkBackgroundColor.withValues(alpha: 0.9),
+          error: Palette.error,
         ),
         scaffoldBackgroundColor: Palette.darkBackgroundColor,
         iconTheme: DarkTheme.iconTheme(),
@@ -285,6 +296,20 @@ class DarkTheme {
           dividerColor: Colors.transparent,
         ),
         canvasColor: Colors.white,
+        dialogTheme: DialogTheme(
+          backgroundColor: Palette.darkBackgroundColor,
+          titleTextStyle: TextStyle(
+            fontFamily: GoogleFonts.urbanist().fontFamily,
+            color: Palette.darkPrimaryTextColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+          contentTextStyle: TextStyle(
+            fontFamily: GoogleFonts.urbanist().fontFamily,
+            color: Palette.darkPrimaryTextColor,
+            fontSize: 16,
+          ),
+        ),
       );
 
   static appBarDecoration() {
@@ -318,14 +343,14 @@ class DarkTheme {
       errorMaxLines: 2,
       suffixIconColor: Palette.primaryTextColor,
       prefixIconColor: Palette.primaryTextColor,
-      hintStyle: inputDecorationTextTheme(size: 14, color: Palette.primaryTextColor),
+      hintStyle: inputDecorationTextTheme(size: 14, color: Palette.darkPrimaryTextColor),
       errorStyle: inputDecorationTextTheme(size: 12, color: Palette.error),
       errorBorder: inputDecorationBorderStyle(color: Palette.error),
       focusedErrorBorder: inputDecorationBorderStyle(color: Palette.error),
       contentPadding: const EdgeInsets.all(8),
-      border: inputDecorationBorderStyle(color: Palette.primaryTextColor),
-      enabledBorder: inputDecorationBorderStyle(color: Palette.primaryTextColor),
-      focusedBorder: inputDecorationBorderStyle(color: Palette.primary),
+      border: inputDecorationBorderStyle(color: Palette.darkPrimaryTextColor),
+      enabledBorder: inputDecorationBorderStyle(color: Palette.darkPrimaryTextColor),
+      focusedBorder: inputDecorationBorderStyle(color: Palette.secondary),
     );
   }
 
@@ -403,12 +428,12 @@ class DarkTheme {
   static ElevatedButtonThemeData elevatedButtonTheme() {
     return ElevatedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: Palette.primary,
-        foregroundColor: Palette.primary,
+        backgroundColor: Palette.secondary,
+        foregroundColor: Palette.onSecondaryColor,
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: Palette.onPrimaryColor,
+          color: Palette.onSecondaryColor,
         ),
         minimumSize: const Size(80, 48),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -449,7 +474,7 @@ class DarkTheme {
 
   static TextSelectionThemeData textSelectionTheme() {
     return const TextSelectionThemeData(
-        cursorColor: Palette.primary, selectionColor: Palette.secondary, selectionHandleColor: Palette.primary);
+        cursorColor: Palette.primary, selectionColor: Palette.primary, selectionHandleColor: Palette.secondary);
   }
 
   static floatingActionButtonTheme() {

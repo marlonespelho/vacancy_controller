@@ -1,4 +1,4 @@
-name: vacancy_controller
+name: parking_controller
 description: "A Flutter project for parking spot management, using MobX for state management, as well as unit and integration tests."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

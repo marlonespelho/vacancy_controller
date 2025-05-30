@@ -24,18 +24,18 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
-  late final _$paginateAtom = Atom(name: 'HomeStoreBase.paginate', context: context);
+  late final _$selectDateAtom = Atom(name: 'HomeStoreBase.selectDate', context: context);
 
   @override
-  Paginate? get paginate {
-    _$paginateAtom.reportRead();
-    return super.paginate;
+  DateTime get selectDate {
+    _$selectDateAtom.reportRead();
+    return super.selectDate;
   }
 
   @override
-  set paginate(Paginate? value) {
-    _$paginateAtom.reportWrite(value, super.paginate, () {
-      super.paginate = value;
+  set selectDate(DateTime value) {
+    _$selectDateAtom.reportWrite(value, super.selectDate, () {
+      super.selectDate = value;
     });
   }
 
@@ -43,7 +43,7 @@ mixin _$HomeStore on HomeStoreBase, Store {
   String toString() {
     return '''
 isLoading: ${isLoading},
-paginate: ${paginate}
+selectDate: ${selectDate}
     ''';
   }
 }

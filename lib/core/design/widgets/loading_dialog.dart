@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vacancy_controller/core/services/main.dart';
+import 'package:parking_controller/core/services/main.dart';
 
 class LoadingDialog extends StatelessWidget {
   const LoadingDialog({super.key});
