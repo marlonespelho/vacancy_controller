@@ -31,5 +31,8 @@
   "emptyParkingHistoryListMessage": "Nenhum registro de estacionamento encontrado.",
   "parkingNotExitedYet": "Vaga ainda ocupada.",
   "entryDateLabel": "Data de entrada: ",
-  "exitDateLabel": "Data de saída: "
+  "exitDateLabel": "Data de saída: ",
+  "changeThemeModeMessage":"Tema alterado para {theme}.",
+  "lightThemeModeLabel": "Claro",
+  "darkThemeModeLabel": "Escuro"
 }
