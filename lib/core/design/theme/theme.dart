@@ -45,10 +45,10 @@ class DefaultTheme {
         appBarTheme: appBarDecoration(),
         progressIndicatorTheme: progressIndicatorTheme(),
         cardColor: Palette.secondary,
-        cardTheme: const CardTheme(color: Colors.white, elevation: 2),
+        cardTheme: const CardThemeData(color: Colors.white, elevation: 2),
         dividerColor: Palette.dividerColor,
         canvasColor: Colors.white,
-        dialogTheme: DialogTheme(
+        dialogTheme: DialogThemeData(
           backgroundColor: Palette.backgroundColor,
           titleTextStyle: TextStyle(
             fontFamily: GoogleFonts.urbanist().fontFamily,
@@ -287,16 +287,16 @@ class DarkTheme {
         appBarTheme: appBarDecoration(),
         progressIndicatorTheme: progressIndicatorTheme(),
         cardColor: Palette.secondary,
-        cardTheme: CardTheme(color: Palette.darkBackgroundColor.withValues(alpha: 0.9), elevation: 2),
+        cardTheme: CardThemeData(color: Palette.darkBackgroundColor.withValues(alpha: 0.9), elevation: 2),
         dividerColor: Palette.dividerColor,
-        tabBarTheme: const TabBarTheme(
+        tabBarTheme: const TabBarThemeData(
           labelColor: Palette.darkPrimaryTextColor,
           unselectedLabelColor: Palette.darkPrimaryTextColor,
           indicatorColor: Palette.darkSecondary,
           dividerColor: Colors.transparent,
         ),
         canvasColor: Colors.white,
-        dialogTheme: DialogTheme(
+        dialogTheme: DialogThemeData(
           backgroundColor: Palette.darkBackgroundColor,
           titleTextStyle: TextStyle(
             fontFamily: GoogleFonts.urbanist().fontFamily,
